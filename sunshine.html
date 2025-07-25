@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To Sunshine 🌞</title>
+
+  <!-- 📱 Mobile Auto-Redirect -->
+  <script>
+    if (window.innerWidth < 768) {
+      window.location.href = "mobile.html";
+    }
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(135deg, #ffe5b4, #ffcad4);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .poem {
+      font-size: 1.5rem;
+      max-width: 700px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 203, 112, 0.5);
+      margin-bottom: 40px;
+    }
+
+    .floaty {
+      position: absolute;
+      animation: floatUp 6s linear infinite;
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    .heart {
+      color: red;
+    }
+
+    .sun {
+      color: gold;
+    }
+
+    .signature {
+      font-size: 1rem;
+      color: #555;
+      background: rgba(255, 255, 255, 0.6);
+      padding: 10px 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255, 223, 100, 0.3);
+      position: absolute;
+      bottom: 20px;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(0.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="poem">
+    <h1>To Maxime-Sunshine ☀️</h1>
+    <p>
+      Your curls dance like waves in the sky,<br>
+      A smile that makes the moon feel shy.<br>
+      Beautiful not just outside, but within,<br>
+      You make the whole world gently spin.<br><br>
+      Like a heart wrapped in golden rays,<br>
+      You light up even cloudy days.<br>
+      Your voice is sunshine turned into sound.<br>
+      So here's a little piece of art,<br>
+      From someone who holds you in their heart. ❤️
+    </p>
+  </div>
+
+  <div class="signature">Made by Adrien 💛</div>
+
+  <script>
+    const symbols = ['☀️', '❤️'];
+    function createFloaty() {
+      const floaty = document.createElement('div');
+      floaty.classList.add('floaty');
+
+      const symbol = symbols[Math.floor(Math.random() * symbols.length)];
+      floaty.textContent = symbol;
+
+      if (symbol === '❤️') {
+        floaty.classList.add('heart');
+      } else {
+        floaty.classList.add('sun');
+      }
+
+      floaty.style.left = Math.random() * 100 + 'vw';
+      floaty.style.fontSize = (Math.random() * 30 + 20) + 'px';
+      floaty.style.animationDuration = (Math.random() * 5 + 4) + 's';
+
+      document.body.appendChild(floaty);
+
+      setTimeout(() => {
+        floaty.remove();
+      }, 8000);
+    }
+
+    setInterval(createFloaty, 500);
+  </script>
+</body>
+</html>
